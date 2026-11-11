@@ -12069,7 +12069,7 @@ excoriated
 electroanalysis 2
 excoriating
 enlivenment
-excoriations
+excoriations 1
 epiclike
 enforcible 1
 elflike
