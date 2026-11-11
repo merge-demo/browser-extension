@@ -841,7 +841,7 @@ caymans
 cain
 caynard
 clydesdale
-chidingness
+chidingness 1
 cainian 1
 cainish 1
 copepod 1
