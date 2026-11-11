@@ -1,5 +1,0 @@
-filegroup(
-    name = "hotel",
-    srcs = glob(["**/*.txt"]),
-    visibility = ["PUBLIC"],
-)

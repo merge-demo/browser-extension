@@ -1,5 +1,0 @@
-filegroup(
-    name = "foxtrot",
-    srcs = glob(["**/*.txt"]),
-    visibility = ["PUBLIC"],
-)

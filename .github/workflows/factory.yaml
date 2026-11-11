@@ -3,8 +3,9 @@ name: PR Factory
 on:
   workflow_dispatch: {}
   # Comment the following cron schedule to stop running this workflow every 30 minutes
-  schedule:
-    - cron: 0/30 * * * *
+  # Manual runs only: a scheduled run adds about 20 demo PRs an hour to the production queue.
+  # schedule:
+  #   - cron: 0/30 * * * *
 
 permissions:
   pull-requests: write
@@ -29,8 +30,8 @@ jobs:
         with:
           repository: trunk-io/mergequeue-tool
           latest: true
-          preRelease: true
           fileName: mq-*-x86_64-unknown-linux-gnu.tar.gz
+          preRelease: true
           extract: true
 
       - name: Get trunk API config
@@ -47,9 +48,8 @@ jobs:
       - name: run mq
         id: edits
         run:
-          ./mq generate --gh-token=${{ secrets.ELI_MERGEDEMO }} --gh-token=${{ secrets.SAM_MERGEDEMO
-          }} --gh-token=${{ secrets.ROBERT_MERGEDEMO }} --gh-token=${{ secrets.PHIL_MERGEDEMO }}
-          --trunk-token=${{ steps.get-trunk-token.outputs.token }}
+          ./mq generate --gh-token=${{ secrets.ROBERT_MERGEDEMO }}  --gh-token=${{ secrets.PAT_MERGEDEMO }} --gh-token=${{ secrets.ELI_MERGEDEMO }} --gh-token=${{ secrets.PHIL_MERGEDEMO }} --gh-token=${{ secrets.BEN_MERGEDEMO }} --trunk-token=${{
+          steps.get-trunk-token.outputs.token }}
         env:
           TRUNK_TOKEN: ${{ steps.get-trunk-token.outputs.token }}
 
@@ -57,7 +57,7 @@ jobs:
         if: always()
         id: clean
         run:
-          ./mq housekeeping --gh-token=${{ secrets.ELI_MERGEDEMO }} --gh-token=${{
-          secrets.SAM_MERGEDEMO }} --trunk-token=${{ steps.get-trunk-token.outputs.token }}
+          ./mq housekeeping --gh-token=${{ secrets.ELI_MERGEDEMO }} --trunk-token=${{
+          steps.get-trunk-token.outputs.token }}
         env:
           TRUNK_TOKEN: ${{ steps.get-trunk-token.outputs.token }}

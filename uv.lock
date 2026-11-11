@@ -17,10 +17,6 @@ members = [
     "uv-echo",
     "uv-foxtrot",
     "uv-golf",
-    "uv-hotel",
-    "uv-indigo",
-    "uv-juliet",
-    "uv-kilo",
     "uv-wordcounter",
 ]
 

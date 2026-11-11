@@ -1,5 +1,0 @@
-filegroup(
-    name = "delta",
-    srcs = glob(["**/*.txt"]),
-    visibility = ["PUBLIC"],
-)

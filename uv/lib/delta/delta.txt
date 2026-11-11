@@ -361,7 +361,7 @@ dailamite
 dotiness
 demonifuge
 defames
-daylights 1
+daylights
 deutomalar
 desalters
 dayman
@@ -1909,7 +1909,7 @@ dallas
 deodorant
 deciphers
 debriefing
-dowser 1
+dowser
 danzig
 didus
 declassicize
@@ -2385,7 +2385,7 @@ dionise
 drugget
 debilitated
 deciceronize
-dino 1
+dino
 decidedly
 dewclaw
 decidence
@@ -3249,7 +3249,7 @@ devitalising
 dolichostylous
 dogrib
 dapicho
-defensibleness 1
+defensibleness
 downsizes
 drays
 defensibly
@@ -3398,7 +3398,7 @@ ditremidae
 defleas
 downlinks
 deflect
-dichotomic 1
+dichotomic
 disinhuming
 darer
 deflecting
@@ -3947,7 +3947,7 @@ dodo
 doctorates
 donne
 delabialization
-denigration 1
+denigration
 delabializing
 distensibility
 delayable
@@ -5055,7 +5055,7 @@ drivingly
 denaturalised
 denaturalising
 denaturalized
-dandriff 1
+dandriff
 drovy
 demographers
 denaturants
@@ -5276,7 +5276,7 @@ desmodactyli
 dengue
 disobligingly
 dabbled
-densifies 1
+densifies
 darr
 dissemblers
 densifying
@@ -5728,7 +5728,7 @@ dysthymia
 drepanid
 demit
 deplorabilia
-dextrane 1
+dextrane
 deplorability
 duals
 deplorableness
@@ -6062,7 +6062,7 @@ deselecting
 demolitionary
 deputes
 damiana
-disacknowledgement 1
+disacknowledgement
 doughbelly
 diopsis
 deputing
@@ -7766,7 +7766,7 @@ detailism
 diglyph
 devisor
 decrier
-dowie 1
+dowie
 devitalizes
 drawler
 ductilizing
@@ -7959,7 +7959,7 @@ defunctive
 downsteepy
 diathermal
 decimeters
-dextroaural 1
+dextroaural
 diacanthous
 dismes
 drupiferous
@@ -8850,7 +8850,7 @@ desirelessness
 dibenzophenazine
 desilver
 dibenzopyrrole
-disproportionates 1
+disproportionates
 digressing
 dixit
 debilissima
@@ -9987,7 +9987,7 @@ divinable
 dinothere
 dimly
 dimmer
-defensor 1
+defensor
 dasyatidae
 dimness
 decisiveness
@@ -11236,7 +11236,7 @@ dangler
 decrescendos
 dissyllabification
 depurating
-dissweeten 1
+dissweeten
 disparish
 dysbulia
 diazo
@@ -11664,7 +11664,7 @@ discorded
 discordous
 dotishness
 dialogged
-didest 1
+didest
 demiditone
 dishexecontahedroid
 discost
@@ -11690,7 +11690,7 @@ discountinuous
 dooming
 deepeners
 dirhams
-disarranger 1
+disarranger
 discour
 dimethylanthranilate
 daubiest
@@ -12432,7 +12432,7 @@ dialectical
 diastereoisomer
 dampne
 dishome
-dishonor 1
+dishonor
 distendedness
 dishonorer
 doctrinairism
@@ -12584,7 +12584,7 @@ dispersoid
 dromedaries
 diamantoid
 denominators
-disintegrator 1
+disintegrator
 deifications
 disintegrators
 dextrer
@@ -13212,7 +13212,7 @@ dinnerless
 dyspnea
 distempered
 dyspneas
-ducat 1
+ducat
 determinator
 draftman
 desexualization
@@ -13286,7 +13286,7 @@ dentiloquist
 dispraisingly
 diversion
 dutched
-dole 1
+dole
 disprince
 destituted
 disprivacied
@@ -13458,7 +13458,7 @@ decantherous
 dishabited
 disrest
 disillusionment
-disguiseless 1
+disguiseless
 despotism
 disrobement
 dowdiest
@@ -13512,7 +13512,7 @@ downtrodden
 dysgraphia
 deticks
 demonomy
-dissavs 1
+dissavs
 drumbeater
 dissceptered
 dislike
@@ -14067,7 +14067,7 @@ decretum
 dragnets
 dryopithecinae
 dispensable
-deluging 1
+deluging
 distributionist
 divariant
 deservingness
@@ -17649,7 +17649,7 @@ deedholder
 doolies
 dhaw
 drawbacks
-dilogy 1
+dilogy
 dialectally
 detoxicating
 delivered

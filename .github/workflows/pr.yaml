@@ -50,27 +50,44 @@ jobs:
         with:
           repository: trunk-io/mergequeue-tool
           latest: true
-          preRelease: false
           fileName: mq-*-x86_64-unknown-linux-gnu.tar.gz
+          preRelease: false
           extract: true
 
       - name: Determine is_merge
         id: check_is_merge
         if: steps.duplicate.outputs.skip_duplicate != 'true'
         run: |
-          if [[ ${GITHUB_EVENT_NAME} == "push" && (${GITHUB_REF_NAME} == trunk-merge/* || ${GITHUB_REF_NAME} == trunk-merge-beta/*) || "${{ github.event.pull_request.title }}" == trunk-merge/*  ]]; then            
+          if [[ ${GITHUB_EVENT_NAME} == "push" && (${GITHUB_REF_NAME} == trunk-merge/* || ${GITHUB_REF_NAME} == trunk-merge-beta/*) || "${{ github.event.pull_request.title }}" == trunk-merge/*  ]]; then
             echo "on_merge=true" >> $GITHUB_OUTPUT
           else
           echo "on_merge=false" >> $GITHUB_OUTPUT
           fi
 
+      # Fast-pass any PR whose changed files are entirely within extension/.
+      - name: Check for extension-only fast-pass
+        id: fast_pass
+        if: steps.duplicate.outputs.skip_duplicate != 'true' && github.event_name == 'pull_request'
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          git fetch --no-tags origin "$BASE_SHA" "$HEAD_SHA"
+          changed=$(git diff --name-only "$BASE_SHA" "$HEAD_SHA")
+          if [[ -n "$changed" ]] && ! grep -qv '^extension/' <<< "$changed"; then
+            echo "fast_pass=true" >> $GITHUB_OUTPUT
+          else
+            echo "fast_pass=false" >> $GITHUB_OUTPUT
+          fi
+
       - name: run tests
         id: test
         # only actually run the test if we're on the merge branch
-        # so we can simulate delay and flakiness
+        # so we can simulate delay and flakiness. PRs whose changes are
+        # entirely under extension/ fast-pass without invoking the test simulator.
         if:
           steps.duplicate.outputs.skip_duplicate != 'true' && steps.check_is_merge.outputs.on_merge
-          == 'true'
+          == 'true' && steps.fast_pass.outputs.fast_pass != 'true'
         run: |
           ./mq test-sim
         env:

@@ -1,6 +1,6 @@
 {
-  "$schema": "https://turborepo.dev/schema.json",
-  "tasks": {
+  "$schema": "https://turbo.build/schema.json",
+  "pipeline": {
     "build": {
       "dependsOn": ["^build"],
       "outputs": []

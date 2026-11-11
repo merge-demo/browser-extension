@@ -36,91 +36,6 @@ python3 tools/detect_impacted_nx_targets.py --base=HEAD~1 -o nx_targets.json
 
 **Output:** Writes a JSON array of affected project names to the output file.
 
-### `detect_impacted_uv_targets.py`
-
-Detects impacted UV workspace packages based on git changes. Uses `uv.lock` to build the dependency
-graph and propagates impact to dependents (e.g. changing `uv-common` impacts all libs and the app).
-
-**Usage:**
-
-```bash
-# Check affected packages between a base commit and HEAD
-python3 tools/detect_impacted_uv_targets.py --base=main
-
-# Check affected packages for uncommitted changes
-python3 tools/detect_impacted_uv_targets.py --uncommitted
-
-# Check affected packages for specific files
-python3 tools/detect_impacted_uv_targets.py --files="uv/lib/alpha/alpha.py,uv/lib/common/common.py"
-
-# Custom output file
-python3 tools/detect_impacted_uv_targets.py --base=HEAD~1 -o uv_targets.json
-```
-
-**Options:**
-
-- `--base BASE`: Base commit/branch for comparison (e.g., 'main', 'HEAD~1')
-- `--head HEAD`: Head commit (default: HEAD)
-- `--files FILES`: Comma-separated list of specific files to check
-- `--uncommitted`: Include uncommitted changes
-- `--untracked`: Include untracked files
-- `-o, --output OUTPUT`: Output file path (default: impacted_targets_json_tmp)
-- `-q, --quiet`: Suppress verbose output
-- `--workspace PATH`: Repo root (default: auto-detect from cwd)
-
-**Output:** Writes a JSON array of affected UV package names to the output file. Use with
-`upload_targets.py` to report impacted targets to Trunk (e.g. when `build == 'uv'` in the mergequeue
-config).
-
-### `detect_impacted_buck2_targets.py`
-
-Detects impacted Buck2 targets based on git changes. Uses the Buck2 build graph: changed files are
-mapped to their owning targets with `buck2 uquery "owner(...)"`, then impact is propagated to every
-dependent target with `buck2 uquery "rdeps(root//..., ...)"`. Runs the pinned `buck2/bin/buck2`
-DotSlash file by default, so [`dotslash`](https://dotslash-cli.com) must be on `PATH`.
-
-- Changes to `.buckconfig`, `.buckroot`, `bin/buck2` (a buck2 upgrade), `toolchains/`, or any `.bzl`
-  file impact all targets.
-- Changes to a `BUCK` file impact every target in that package.
-- Deleted files impact every target in their nearest remaining package.
-
-**Usage:**
-
-```bash
-# Check affected targets between a base commit and HEAD
-python3 tools/detect_impacted_buck2_targets.py --base=main
-
-# Check affected targets for uncommitted changes
-python3 tools/detect_impacted_buck2_targets.py --uncommitted
-
-# Check affected targets for specific files
-python3 tools/detect_impacted_buck2_targets.py --files="buck2/alpha/alpha.txt,buck2/bravo/bravo.txt"
-
-# Custom output file
-python3 tools/detect_impacted_buck2_targets.py --base=HEAD~1 -o buck2_targets.json
-```
-
-**Options:**
-
-- `--base BASE`: Base commit/branch for comparison (e.g., 'main', 'HEAD~1')
-- `--head HEAD`: Head commit (default: HEAD)
-- `--files FILES`: Comma-separated list of specific files to check
-- `--uncommitted`: Include uncommitted changes
-- `--untracked`: Include untracked files
-- `-o, --output OUTPUT`: Output file path (default: impacted_targets_json_tmp)
-- `-q, --quiet`: Suppress verbose output
-- `--buck2-dir PATH`: Buck2 project root (default: `buck2/`)
-- `--buck2 PATH`: buck2 executable (default: `buck2/bin/buck2`)
-
-**Output:** Writes a JSON array of impacted target labels (e.g. `root//alpha:alpha`) to the output
-file. Use with `upload_targets.py` to report impacted targets to Trunk (e.g. when `build == 'buck2'`
-in the mergequeue config).
-
-### `upload_targets.py`
-
-Generic script to upload a JSON array of impacted targets to the Trunk API. Used by the Nx, Turbo,
-UV, and Buck2 PR target actions.
-
 ### `upload_glob_targets.py`
 
 Uploads impacted targets to Trunk API.
@@ -128,3 +43,27 @@ Uploads impacted targets to Trunk API.
 ### `glob_targets.sh`
 
 Helper script for glob-based target detection.
+
+### `quick_impacted_targets.py`
+
+Shortcut detector that skips the expensive per-tool setup when a PR only
+touches folders outside the active build tool's workspace. Uses only Python
+stdlib so it runs without `pip install`.
+
+If every changed file is outside `--mode-dir`, it uploads the set of
+first-level folder names of the changed files as the impacted targets and
+exits `0`. Otherwise it exits `2` so the caller falls through to the full
+tool-specific detection.
+
+**Usage:**
+
+```bash
+python3 tools/quick_impacted_targets.py \
+  --mode-dir=nx \
+  --base="$BASE_SHA" --head="$HEAD_SHA" \
+  --api-url="https://api.trunk.io:443/v1/setImpactedTargets"
+```
+
+Reads `TRUNK_TOKEN`, `GITHUB_REPOSITORY`, `PR_NUMBER`, `PR_SHA`, and
+`TARGET_BRANCH` from the environment (same variables already set by the
+PR-targets workflow).

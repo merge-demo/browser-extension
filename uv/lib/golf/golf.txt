@@ -104,7 +104,7 @@ greengill
 gadgetry
 geezer
 gluers
-gujerat 1
+gujerat
 glairier
 guises
 ganguela
@@ -389,7 +389,7 @@ galant
 galanthus
 guilery
 ganymedes
-gains 1
+gains
 goys
 glassiest
 goalposts
@@ -443,7 +443,7 @@ gallantness
 goldless
 gibbetted
 galipoidine
-gloominess 1
+gloominess
 galei
 gynecotelic
 glandlike
@@ -1957,7 +1957,7 @@ gruft
 gustoso
 gastrilegous
 gamasidae
-gobans 1
+gobans
 gauleiter
 gastrohepatic
 grated
@@ -2052,7 +2052,7 @@ glime
 grapeful
 gantry
 gazzetta
-gutterize 1
+gutterize
 gavels
 gavia
 geminiform
@@ -2113,7 +2113,7 @@ geison
 gawking
 glucinic
 gastrins
-gawkish 1
+gawkish
 grecomania
 gipsied
 geranials
@@ -3447,7 +3447,7 @@ geothermic
 girdingly
 guimpes
 goutily
-glaucosis 1
+glaucosis
 glorioles
 gamont
 gesithcundman
@@ -3682,7 +3682,7 @@ governorships
 gadgeteers
 glyptician
 gnomoniaceae
-gametes 1
+gametes
 gutturotetany
 gory
 ghost
@@ -4802,7 +4802,7 @@ grandiloquent
 gravedo
 glorifies
 gibbosity
-governorship 1
+governorship
 galgal
 gweducks
 gargoylishly
@@ -5035,7 +5035,7 @@ garibaldi
 glider
 gonocheme
 genesiology
-garavance 1
+garavance
 glowed
 gelt
 geosynclinal
@@ -5133,7 +5133,7 @@ grassland
 glycoside
 glossate
 gregarinous
-glali 1
+glali
 gnatflower
 gaumed
 gallweed
@@ -5374,7 +5374,7 @@ gelandejump
 gunplays
 glazework
 gutting
-geckoid 1
+geckoid
 gravitating
 gruelings
 gingal
@@ -5545,7 +5545,7 @@ glycidol
 gorsier
 gowning
 gad
-grumbles 1
+grumbles
 gamecocks
 guardlike
 globigerinae
@@ -5718,7 +5718,7 @@ gloveress
 gimmaled
 gpad
 ganglioneuron
-gestning 1
+gestning
 gelts
 guardeen
 guttule
@@ -6287,7 +6287,7 @@ grundyist
 galop
 governessy
 gid
-gobbles 1
+gobbles
 glaucescent
 ginzoes
 grege
@@ -6865,7 +6865,7 @@ gaffsman
 gonosphere
 grisettish
 graphics
-gorbal 1
+gorbal
 guaranty
 globosities
 galaxies
@@ -7272,7 +7272,7 @@ gormandism
 gormandize
 glomi
 gormandizes
-gundeck 1
+gundeck
 gangsa
 gleaming
 gwerziou
@@ -7391,7 +7391,7 @@ gleds
 grewsomely
 gastrohysterectomy
 geometroid
-gothamite 1
+gothamite
 germiparous
 glassblower
 gummiest
@@ -7505,14 +7505,14 @@ goals
 gamogenesis
 gaen
 glycolytic
-gortonian 1
+gortonian
 glaucophanize
 gangs
 glitzy
 glabellous
 gryllus
 gubernaculum
-grigri 1
+grigri
 graypate
 gemstones
 giggling
@@ -9130,7 +9130,7 @@ gavelkinder
 grisounite
 gelong
 greenbrier
-gigful 1
+gigful
 gracious
 grinning
 gingerberry
@@ -9192,7 +9192,7 @@ grill
 granulating
 grippiness
 gratulatory
-glycolytically 1
+glycolytically
 guanajuatite
 galvanometer
 greenwich
@@ -9765,7 +9765,7 @@ guidon
 gagaku
 gymnastic
 gasworks
-gluttonizing 1
+gluttonizing
 gradino
 goonda
 gastriloquial
@@ -10008,7 +10008,7 @@ gudame
 gibberose
 gone
 gentlemanship
-gorgonised 1
+gorgonised
 geomys
 gamba
 garlandwise
@@ -10431,7 +10431,7 @@ gruffy
 grosbeaks
 groundsill
 gilia
-goudy 1
+goudy
 gesneraceous
 gomphodont
 geobiologic
@@ -10546,7 +10546,7 @@ genisaro
 glyceraldehyde
 granospherite
 gard
-gunk 1
+gunk
 girdering
 geeing
 grateman
