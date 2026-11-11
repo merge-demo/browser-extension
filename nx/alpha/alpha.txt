@@ -16235,7 +16235,7 @@ agriculturally
 antisterility
 ardelio 1
 araceous
-antistock
+antistock 1
 acetylator 1
 antistreptococcin
 alligation 1
