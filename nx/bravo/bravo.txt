@@ -18382,7 +18382,7 @@ buzzard 1
 bubos
 beylical
 beasts
-bluebook
+bluebook 1
 barycenter
 balaustre
 byronics

@@ -930,7 +930,7 @@ cakewalker 1
 cakewalking 1
 caressant
 carnotite
-caky
+caky 1
 clientelage
 conformant
 consecration
