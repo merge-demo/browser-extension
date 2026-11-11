@@ -4131,7 +4131,7 @@ grimnesses 1
 galagala
 gnathopod
 gosmore
-glotum 2
+glotum 3
 gatchwork 2
 greying 1
 ges
