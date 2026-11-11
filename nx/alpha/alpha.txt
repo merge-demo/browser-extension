@@ -22791,7 +22791,7 @@ atlantite
 arthrodic
 antiliturgic 2
 antigenically
-ammodytes
+ammodytes 1
 antipopulationist
 autokrator
 anomalurus
